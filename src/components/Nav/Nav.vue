@@ -24,7 +24,6 @@
   font-size: 13px;
   text-decoration: none;
   color: #666666;
-  position: relative;
 }
 .nav .active {
   color: #FFBB22;

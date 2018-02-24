@@ -37,7 +37,6 @@
   background-repeat: no-repeat;
   position: absolute;
   background-position:center;
-  z-index: 50;
 }
 .header .top-wrapper .search-wrapper .search-bar {
   width: 100%;
@@ -149,4 +148,126 @@
   color: white;
   font-size: 12px;
 }
+.header .bulletin-wrapper .detail {
+  position: absolute;
+  top: 140px;
+  right: -3px;
+  color: white;
+}
+.header .bulletin-wrapper .detail .text {
+  font-size: 1px;
+  float: left;
+  line-height: 16px;
+}
+.header .bulletin-wrapper .detail .icon-keyboard_arrow_right {
+  width: 16px;
+  height: 16px;
+  float: right;
+  margin-right: 6px;
+  margin-top: 1px;
+}
 
+/* 公告詳細內容 */
+.header .bulletin-detail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(98, 98, 98, 0.8);
+}
+.header .bulletin-detail .detail-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 43px 20px 125px;
+  box-sizing: border-box;
+}
+.header .bulletin-detail .detail-wrapper .main-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 10px;
+  background-size: 100% 100%;
+  z-index: 60;
+  font-size: 12px;
+  color: #bababc;
+}
+
+.header .bulletin-detail .detail-wrapper .main-wrapper .icon {
+  width: 60px;
+  height: 60px;
+  background-size: 130%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translate(-50%);
+}
+.header .bulletin-detail .detail-wrapper .main-wrapper .name {
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translate(-50%);
+  color: white;
+  white-space:nowrap;
+  font-size: 15px;
+}
+.header .bulletin-detail .detail-wrapper .main-wrapper .tip {
+  position: absolute;
+  white-space:nowrap;
+  top: 155px;
+  left: 50%;
+  transform: translate(-50%);
+}
+.header .bulletin-detail .detail-wrapper .main-wrapper .time {
+  position: absolute;
+  white-space:nowrap;
+  top: 180px;
+  left: 50%;
+  transform: translate(-50%);
+}
+.header .bulletin-detail .detail-wrapper .main-wrapper .discounts {
+  position: absolute;
+  border-top: 1px solid #bababc;
+  top: 233px;
+  margin: 0 20px;
+  padding-top: 20px;
+}
+.header .bulletin-detail .detail-wrapper .main-wrapper .discounts img {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  vertical-align: top;
+}
+.header .bulletin-detail .detail-wrapper .main-wrapper .discounts span {
+  color: white;
+  line-height: 16px;
+}
+.header .bulletin-detail .detail-wrapper .close-wrapper {
+  padding-top: 20px;
+  height: 40px;
+  text-align: center;
+}
+.header .bulletin-detail .detail-wrapper .close-wrapper span {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  color: white;
+  font-size: 14px;
+  display: inline-block;
+  background-color: rgba(118, 118, 118, 0.7);
+  border: 1px solid rgba(140, 140, 140, 0.9);
+}
+
+/* Vue 過場特效 */
+.detail-enter-active, .detail-leave-active {
+  transition: 1s all;
+}
+.detail-enter, .detail-leave-to {
+  opacity: 0;
+}
+.detail-enter-to, .detail-leave {
+  opacity: 1;
+}
