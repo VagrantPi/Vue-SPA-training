@@ -54,6 +54,10 @@
               配送時間:
               {{poiInfo.shipping_time}}
             </p>
+            <div class="score">
+              <Star :score="poiInfo.wm_poi_score"></Star>
+              <span>{{poiInfo.wm_poi_score}}</span>
+            </div>
             <div class="discounts">
               <p>
                 <img v-if="poiInfo.discounts2" :src="poiInfo.discounts2[0].icon_url">
@@ -72,6 +76,9 @@
 </template>
 
 <script>
+
+import Star from "@/components/Star/Star"
+
 export default {
   data() {
     return {
@@ -83,6 +90,9 @@ export default {
       type: Object,
       default: {}
     }
+  },
+  components: {
+    Star
   },
   computed: {
     content_seller_logo() {
