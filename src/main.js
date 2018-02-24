@@ -27,7 +27,8 @@ const routes = [
   },
   {
     path: '/goods',
-    component: Goods
+    component: Goods,
+    props: { container:{} , goods:{} }
   },
   {
     path: '/ratings',

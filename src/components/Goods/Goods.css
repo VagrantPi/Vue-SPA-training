@@ -1,0 +1,51 @@
+.goods-wrapper {
+  display: flex;
+
+  position: absolute;
+  top: 190px;
+  bottom: 51px;
+
+  overflow: hidden;
+  width: 100%;
+}
+/*
+flex: flex-grow | flex-shrink | flex-basis';
+// flex-grow 為避選，其餘為可選
+預設: flex 0 1 auto;
+flex-grow: 定義放大比例，預設為0，如果存在剩餘空間也不放大
+flex-shrink: 定義縮小比例，預設為1，如果空間不足時，該元素會被縮小。flex-shrink 為 0 時，其他元素為1，則空間不足時，前者不縮小
+flex-basis: 定義了再分配多餘空間前，元素佔據主軸空間，瀏覽器根據這個屬性，估算佔據是否有多餘空間，
+            預設為 auto，即元素的本來大小，設為跟 width 或 height 一樣，則元素佔據固定空間
+*/
+.goods-wrapper .menu-wrapper {
+  /* 空間不足時部會放大或縮小，都固定為 85px */
+  flex: 0 0 85px;
+  background-color: #F4F4F4;
+}
+.goods-wrapper .menu-wrapper .menu-item {
+  padding: 16px 23px 15px 10px;
+  border-bottom: 1px solid #E4E4E4
+}
+.goods-wrapper .menu-wrapper .menu-item .text {
+  font-size: 13px;
+  color: #333333;
+  line-height: 17px;
+  vertical-align: middle;
+
+  /* 多行顯示...，使用 WebKit 的 CSS擴充屬性 */
+  /* 元素中的文字行數 */
+  -webkit-line-clamp: 2;
+  /* 必加，將對象作為彈性伸縮盒子模型顯示 */
+  display: -webkit-box;
+  /* 必加，設置或檢索伸縮盒子的子元素排列方式 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.goods-wrapper .menu-wrapper .menu-item .text .icon {
+  width: 15px;
+  height: 15px;
+}
+.goods-wrapper .foods-wrapper {
+  /* 會依應剩餘空間的變大而變大 */
+  flex: 1;
+}

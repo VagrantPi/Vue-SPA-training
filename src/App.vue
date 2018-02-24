@@ -13,6 +13,7 @@
 <script>
 import Myheader from './components/Header/Header'
 import Mynav from './components/Nav/Nav'
+import { log } from 'util';
 
 export default {
   name: 'App',
@@ -23,7 +24,7 @@ export default {
   data() {
     return {
       // header 所需要的資料
-      poiInfo: {}
+      poiInfo: {},
     }
   },
   // 所有的生命周期钩子自动绑定 this 上下文到实例中，因此你可以访问数据，

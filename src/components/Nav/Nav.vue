@@ -1,9 +1,9 @@
 <template>
-  <ul class="nav">
+  <div class="nav">
     <router-link to="/goods" class="nav-item goods">點菜</router-link>
     <router-link to="/ratings" class="nav-item ratings">評價</router-link>
     <router-link to="/seller" class="nav-item seller">商家</router-link>
-  </ul>
+  </div>
 </template>
 
 <script>
