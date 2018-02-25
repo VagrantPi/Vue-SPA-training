@@ -1,7 +1,7 @@
 <template>
   <div class="star">
     <!-- 這邊塞 key 的原因是因為 eslint 報錯 ╮(╯_╰)╭ https://github.com/vuejs/vetur/issues/261 -->
-    <span v-for="itemClass in itemClasses" :class="itemClass" :key="itemClass" class="start-item"></span>
+    <span v-for="itemClass in itemClasses" :class="itemClass" :key="itemClass.result" class="start-item"></span>
   </div>
 </template>
 <script>

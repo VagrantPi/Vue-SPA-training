@@ -34,7 +34,7 @@
       <img class="bulletin-img" v-if="poiInfo.discounts2" :src="poiInfo.discounts2[0].icon_url">
       <div class="bulletin-text" v-if="poiInfo.discounts2">{{ poiInfo.discounts2[0].info }}</div>
       <div class="detail" v-on:click="switchBulletin">
-        <div class="text">{{ poiInfo.discounts2.length }}個活動</div>
+        <div class="text" v-if="poiInfo.discounts2">{{ poiInfo.discounts2.length }}個活動</div>
         <span class="icon-keyboard_arrow_right"></span>
       </div>
     </div>
