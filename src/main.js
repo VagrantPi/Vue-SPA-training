@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
-import Axios from 'Axios';
+import Axios from 'axios';
 
 // 1. 導入 component
 import Goods from './components/Goods/Goods.vue'
