@@ -53,23 +53,32 @@
       </div>
     </div>
 
+    <Shopcart
+      :shipping_fee_tip="poiInfo.shipping_fee_tip"
+      :min_price_tip="poiInfo.min_price_tip"
+    ></Shopcart>
+
   </div>
 </template>
 
 <script>
 import BScroll from 'better-scroll';
-import { setTimeout } from 'timers';
+import Shopcart from '@/components/Shopcart/Shopcart';
 
 export default {
   data() {
     return {
       container: {},
       goods: {},
+      poiInfo: {},
       listHeight: [],
       scrollY: 0,
       menuScroll: {},
       foodScroll: {}
     }
+  },
+  components: {
+    Shopcart,
   },
   created() {
     let that = this;
@@ -78,6 +87,7 @@ export default {
       if(dataSource.code == 0) {
         that.container = dataSource.data.container_operation_source;
         that.goods = dataSource.data.food_spu_tags;
+        that.poiInfo = dataSource.data.poi_info;
 
         // 呼叫滾動方法
         that.initScroll();
@@ -97,9 +107,6 @@ export default {
     });
   },
   methods: {
-    scrollTo() {
-      console.log('030')
-    },
     head_bg(imgName) {
       return "background-image: url(" + imgName + ")";
     },
@@ -118,9 +125,6 @@ export default {
       // new BScroll('.foods-wrapper');
 
       // 滾動監聽事件
-      this.foodScroll.on('scrollEnd', (pos) => {
-        console.log('scrollY: ' + this.scrollY)
-      })
       this.foodScroll.on('scroll', (pos) => {
         this.scrollY = Math.abs(Math.round(pos.y));
         // console.log('scrollY: ' + this.scrollY)
@@ -154,7 +158,6 @@ export default {
 
         // 是否在上述區間
         if(!height2 || (this.scrollY >= height1 && this.scrollY < height2)) {
-          // console.log(item)
           return item;
         }
       }
