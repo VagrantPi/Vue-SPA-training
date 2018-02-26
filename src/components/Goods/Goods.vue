@@ -46,6 +46,9 @@
                     <span class="unit">/{{food.unit}}</span>
                   </p>
                 </div>
+                <div class="cartcontrol-wrapper">
+                  <Cartcontrol :food="food"></Cartcontrol>
+                </div>
               </li>
             </ul>
           </li>
@@ -64,6 +67,7 @@
 <script>
 import BScroll from 'better-scroll';
 import Shopcart from '@/components/Shopcart/Shopcart';
+import Cartcontrol from '@/components/Cartcontrol/Cartcontrol';
 
 export default {
   data() {
@@ -79,6 +83,7 @@ export default {
   },
   components: {
     Shopcart,
+    Cartcontrol,
   },
   created() {
     let that = this;
@@ -118,8 +123,9 @@ export default {
       this.foodScroll = new BScroll(this.$refs.foodScroll, {
         // probeType 為 3 時，才有辦法監聽到滑動
         probeType: 3,
-        momentum: true
+        momentum: true,
         // bounce: true
+        click: true
       });
       // new BScroll('.menu-wrapper');
       // new BScroll('.foods-wrapper');

@@ -84,6 +84,7 @@ flex-basis: 定義了再分配多餘空間前，元素佔據主軸空間，瀏�
 .goods-wrapper .foods-wrapper .foods-list-wrapper .food-list .food-item {
   display: flex;
   margin-bottom: 25px;
+  position: relative;
 }
 .goods-wrapper .foods-wrapper .foods-list-wrapper .food-list .food-item .icon {
   flex: 0 0 63px;
@@ -140,3 +141,8 @@ flex-basis: 定義了再分配多餘空間前，元素佔據主軸空間，瀏�
   color: #bfbfbf;
 }
 
+.goods-wrapper .foods-wrapper .foods-list-wrapper .food-list .food-item .cartcontrol-wrapper {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
