@@ -24,7 +24,8 @@ flex-basis: 定義了再分配多餘空間前，元素佔據主軸空間，瀏�
 }
 .goods-wrapper .menu-wrapper .menu-item {
   padding: 16px 23px 15px 10px;
-  border-bottom: 1px solid #E4E4E4
+  border-bottom: 1px solid #E4E4E4;
+  position: relative;
 }
 .goods-wrapper .menu-wrapper .current {
   background-color: white;
@@ -45,6 +46,18 @@ flex-basis: 定義了再分配多餘空間前，元素佔據主軸空間，瀏�
   /* 必加，設置或檢索伸縮盒子的子元素排列方式 */
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+.goods-wrapper .menu-wrapper .menu-item .num {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  font-size: 9px;
+  background: red;
+  color: white;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  text-align: center;
 }
 .goods-wrapper .menu-wrapper .menu-item .text .icon {
   width: 15px;

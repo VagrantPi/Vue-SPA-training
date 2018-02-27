@@ -15,6 +15,7 @@
             <img :src="item.icon" class="icon" v-if="item.icon">
             {{ item.name }}
           </p>
+          <i class="num" v-show="calculateCount(item.spus)">{{ calculateCount(item.spus) }}</i>
         </li>
       </ul>
     </div>
@@ -59,6 +60,7 @@
     <Shopcart
       :shipping_fee_tip="poiInfo.shipping_fee_tip"
       :min_price_tip="poiInfo.min_price_tip"
+      :SelectFoods="selectFoods"
     ></Shopcart>
 
   </div>
@@ -152,11 +154,17 @@ export default {
       let foodlist = this.$refs.foodScroll.getElementsByClassName('food-list-hook');
       let el = foodlist[index];
       this.foodScroll.scrollToElement(el, 1000)
+    },
+    calculateCount(spus) {
+      let count = 0;
+      spus.forEach((food) => {
+        if(food.count > 0) count += food.count;
+      })
+      return count;
     }
   },
-  computed: { // computed 不能傳遞參數
+  computed: { // computed 無法傳值
     currentIndex() {   // 根據右側滾動位置，確定對應的索引下標
-
       for(let item = 0, len = this.listHeight.length; item < len; item++) {
         // 獲取商品區間的範圍
         let height1 = this.listHeight[item];
@@ -168,8 +176,20 @@ export default {
         }
       }
       return 0;
+    },
+    selectFoods() {
+      let foods = [];
+      // 這邊使用 this.goods.forEach() 會出現 forEach is not a function
+      Array.prototype.forEach.call(this.goods, (good) => {
+        good.spus.forEach((food) => {
+          if(food.count > 0) {
+            foods.push(food)
+          }
+        });
+      });
+      return foods;
     }
-  }
+  },
 };
 </script>
 

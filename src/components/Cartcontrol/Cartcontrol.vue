@@ -1,14 +1,20 @@
 <template>
   <div class="cartcontrol">
     <!-- click 不知為啥會 call 兩次 -->
-    <div class="cart-decrease icon-remove_circle_outline" v-show="food.count" @click="decreaseCart"></div>
+    <!-- <transition name="move">
+      <div class="cart-decrease icon-remove_circle_outline" v-show="food.count" @click="decreaseCart"></div>
+    </transition> -->
+
+    <transition name="move">
+      <input type="button" value="一"  v-show="food.count" class="cart-decrease2" @click="decreaseCart">
+    </transition>
     <div class="cart-count" v-show="food.count">{{ food.count }}</div>
     <input type="button" value="+" class="cart-add2" @click="addCart">
-    <!--
-      <div class="cart-add icon-add_circle" @click="addCart">
+
+    <!-- <div class="cart-add icon-add_circle" @click="addCart">
       <i class="bg"></i>
-    </div>
-    -->
+    </div> -->
+
   </div>
 </template>
 
