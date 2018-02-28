@@ -32,7 +32,7 @@
           <li v-for="item in goods" class="food-list food-list-hook" :key="item.name">
             <h3 class="title">{{item.name}}</h3>
             <ul>
-              <li v-for="food in item.spus" class="food-item" :key="food.name">
+              <li v-for="food in item.spus" class="food-item" :key="food.name"  @click="showDetail(food)">
                 <div class="icon" :style="head_bg(food.picture)"></div>
                 <div class="content">
                   <h3 class="name">{{food.name}}</h3>
@@ -57,10 +57,14 @@
       </div>
     </div>
 
+    <!-- 購物車 -->
     <Shopcart
       :poiInfo="poiInfo"
       :SelectFoods="selectFoods"
     ></Shopcart>
+
+    <!-- 商品詳情 -->
+    <Food :food="selectFood" ref="foodView"></Food>
 
   </div>
 </template>
@@ -69,6 +73,7 @@
 import BScroll from 'better-scroll';
 import Shopcart from '@/components/Shopcart/Shopcart';
 import Cartcontrol from '@/components/Cartcontrol/Cartcontrol';
+import Food from '@/components/Food/Food';
 
 export default {
   data() {
@@ -79,12 +84,14 @@ export default {
       listHeight: [],
       scrollY: 0,
       menuScroll: {},
-      foodScroll: {}
+      foodScroll: {},
+      selectFood: {}
     }
   },
   components: {
     Shopcart,
     Cartcontrol,
+    Food,
   },
   created() {
     let that = this;
@@ -160,6 +167,11 @@ export default {
         if(food.count > 0) count += food.count;
       })
       return count;
+    },
+    showDetail(food) {
+      this.selectFood = food;
+      // 呼叫自 component 的方法
+      this.$refs.foodView.showView();
     }
   },
   computed: { // computed 無法傳值

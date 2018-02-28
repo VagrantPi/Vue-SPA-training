@@ -6,10 +6,11 @@
     </transition> -->
 
     <transition name="move">
-      <input type="button" value="一"  v-show="food.count" class="cart-decrease2" @click="decreaseCart">
+      <!-- 防止事件冒泡所以使用 click.stop.prevent -->
+      <input type="button" value="一"  v-show="food.count" class="cart-decrease2" @click.stop.prevent="decreaseCart">
     </transition>
     <div class="cart-count" v-show="food.count">{{ food.count }}</div>
-    <input type="button" value="+" class="cart-add2" @click="addCart">
+    <input type="button" value="+" class="cart-add2" @click.stop.prevent="addCart">
 
     <!-- <div class="cart-add icon-add_circle" @click="addCart">
       <i class="bg"></i>
