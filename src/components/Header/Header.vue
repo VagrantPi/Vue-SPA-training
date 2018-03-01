@@ -39,7 +39,7 @@
       </div>
     </div>
     <!-- 公告詳細內容 -->
-    <transition name="detail">
+    <transition name="bulletinDetail">
       <div class="bulletin-detail" v-show="isShow">
         <div class="detail-wrapper">
           <div class="main-wrapper" :style="detail_bg ">

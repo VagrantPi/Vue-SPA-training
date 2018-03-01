@@ -155,7 +155,7 @@
   color: white;
 }
 .header .bulletin-wrapper .detail .text {
-  font-size: 1px;
+  font-size: 11px;
   float: left;
   line-height: 16px;
 }
@@ -281,12 +281,12 @@
 }
 
 /* Vue 過場特效 */
-.detail-enter-active, .detail-leave-active {
+.bulletinDetail-enter-active, .bulletinDetail-leave-active {
   transition: 1s all;
 }
-.detail-enter, .detail-leave-to {
+.bulletinDetail-enter, .bulletinDetail-leave-to {
   opacity: 0;
 }
-.detail-enter-to, .detail-leave {
+.bulletinDetail-enter-to, .bulletinDetail-leave {
   opacity: 1;
 }

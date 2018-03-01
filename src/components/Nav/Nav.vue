@@ -32,6 +32,7 @@
   text-decoration: none;
   color: #666666;
   position: relative;
+  top: 0;
 }
 .nav .active {
   color: #FFBB22;

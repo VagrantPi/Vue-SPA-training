@@ -5,7 +5,10 @@
 
     <Mynav :commentNum='commentNum'></Mynav>
 
-    <router-view></router-view>
+    <!-- 使 `vue-router` 切換時能保留 component 跟狀態 -->
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
 
   </div>
 </template>
