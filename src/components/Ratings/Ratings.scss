@@ -1,0 +1,188 @@
+.ratings-wrapper {
+  position: absolute;
+  top: 200px;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  .overView {
+    padding: 20px 0 18px 0;
+    display: flex;
+    .overView-left {
+      flex: 1;
+      padding-left: 26px;
+      .comment-score {
+        float: left;
+        width: 48px;
+        text-align: center;
+        margin-right: 26px;
+        .score {
+          font-size: 23px;
+          font-weight: 800;
+          color: #ffb000;
+          margin-bottom: 9px;
+        }
+        .text {
+          font-size: 11px;
+          color: #666666;
+        }
+      }
+      .other-score {
+        float: left;
+        margin-top: 3px;
+        .item {
+          height: 11px;
+          .text {
+            font-size: 11px;
+            margin-right: 11px;
+            float: left;
+            color: #666666;
+          }
+          .star {
+            float: left;
+            margin-right: 11px;
+          }
+          .score {
+            float: left;
+            font-size: 11px;
+            color: #ffb000;
+          }
+        }
+        .quality-score {
+          margin-bottom: 14px;
+        }
+      }
+    }
+    .overView-right {
+      flex: 0 0 100px;
+      text-align: center;
+      border-left: 1px solid #9d9d9d;
+      .delivery-score.score {
+        font-size: 19px;
+        color: #999999;
+        font-weight: 500;
+        margin-bottom: 10px;
+        margin-top: 3px;
+      }
+      .delivery-score.text {
+        font-size: 11px;
+        color: #999999;
+      }
+    }
+  }
+  .content {
+    padding: 16px;
+    .rating-select {
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 0;
+      border: 1px solid #ffb000;
+      margin-bottom: 11px;
+      border-radius: 3px;
+      .item {
+        width: 33.3%;
+        display: inline-block;
+        height: 33px;
+        font-size: 14px;
+        text-align: center;
+        border-right: 1px solid #ffb000;
+        box-sizing: border-box;
+        color: #ffb000;
+        padding-top: 9px;
+      }
+      .item:last-child {
+        border-right: 0;
+      }
+      .item:last-child img {
+        height: 14px;
+        vertical-align: middle;
+        color: #ffb000;
+      }
+      .active {
+        background-color: #ffb000;
+        color: black;
+      }
+    }
+    .labels-view {
+      .label-item {
+        display: inline-block;
+        height: 27px;
+        line-height: 27px;
+        padding: 0 10px;
+        font-size: 12px;
+        background: #f4f4f4;
+        text-align: center;
+        margin-right: 6px;
+        margin-bottom: 6px;
+        border-radius: 3px;
+        color: #999999;
+      }
+      .heighlight {
+        color: #656565;
+      }
+    }
+    .rating-list {
+      .comment-item {
+        padding: 16px 16px 16px 0;
+        border-bottom: 1px solid #F4F4F4;
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        .comment-header {
+          flex: 0 0 35px;
+          margin-right: 11px;
+          img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+          }
+        }
+        .comment-main {
+          flex: 1;
+          .user {
+            width: 50%;
+            float: left;
+            font-size: 11px;
+            color: #333333;
+          }
+          .time {
+            width: 50%;
+            float: right;
+            text-align: right;
+            font-size: 9px;
+            color: #666666;
+          }
+          .star-wrapper {
+            float: left;
+            margin-top: 12px;
+            margin-bottom: 15px;
+            .text {
+              color: #999999;
+              font-size: 11px;
+              float: left;
+            }
+            .rating-star {
+              float: left;
+              margin-left: 7px;
+            }
+          }
+          .rating-content {
+            float: left;
+            font-size: 13px;
+            line-height: 19px;
+            width: 100%;
+            i {
+              color: #576B95;
+            }
+          }
+          .img-wrapper {
+            margin-top: 9px;
+            float: left;
+            img {
+              width: 175px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

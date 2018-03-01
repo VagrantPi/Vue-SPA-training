@@ -3,7 +3,7 @@
 
     <Myheader :poiInfo='poiInfo'></Myheader>
 
-    <Mynav></Mynav>
+    <Mynav :commentNum='commentNum'></Mynav>
 
     <router-view></router-view>
 
@@ -25,6 +25,8 @@ export default {
     return {
       // header 所需要的資料
       poiInfo: {},
+
+      commentNum: 0,
     }
   },
   // 所有的生命周期钩子自动绑定 this 上下文到实例中，因此你可以访问数据，
@@ -38,6 +40,14 @@ export default {
       let dataSource = res.data;
       if(dataSource.code == 0) {
         that.poiInfo = dataSource.data.poi_info;
+      }
+    }).catch(function(err) {
+      console.log(err);
+    });
+    this.$axios.get('/api/ratings').then(function(res) {
+      let dataSource = res.data;
+      if(dataSource.code == 0) {
+        that.commentNum = dataSource.data.comment_num;
       }
     }).catch(function(err) {
       console.log(err);
